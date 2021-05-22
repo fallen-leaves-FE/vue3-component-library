@@ -1,8 +1,9 @@
 import { App } from 'vue'
-import PlmCard from './plm-card'
+
+import Button from './Button'
 
 const components = [
-  PlmCard
+  Button
 ]
 // 全局注册
 const install = (app: App) => {
@@ -13,7 +14,7 @@ const install = (app: App) => {
 
 // 局部注册
 export {
-  PlmCard,
+  Button,
   install
 }
 

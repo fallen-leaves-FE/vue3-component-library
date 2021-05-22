@@ -1,0 +1,148 @@
+@mixin button-hover($--font-color, $--background-color, $--border-color) {
+  &:hover {
+    color: $--font-color;
+    background-color: $--background-color;
+    border-color: $--border-color;
+  }
+}
+@mixin button-is-plain(
+  $--font-color--default,
+  $--background-color--default,
+  $--border-color--default,
+  $--font-color--hover,
+  $--background-color--hover,
+  $--border-color--hover
+  ) {
+  &.is-plain {
+    color: $--font-color--default;
+    background-color: $--background-color--default;
+    border-color: $--border-color--default;
+    @include button-hover($--font-color--hover, $--background-color--hover, $--border-color--hover);
+  }
+}
+.fa-button {
+  border: {
+    width: 1px;
+    style: solid;
+    color: $--color-font--default;
+  }
+  border-radius: 4px;
+  color: $--color-font--default;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  font-size: $--font-size--normal;
+  &.size--medium {
+    padding: 10px 20px;
+  }
+  &.size--small {
+    font-size: $--font-size--small;
+    padding: 9px 15px;
+    border-radius: 3px;
+  }
+  &.size-mini {
+    font-size: $--font-size--mini;
+    padding: 7px 15px;
+    border-radius: 3px;
+  }
+  &.is-disabled {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+  &.is-round {
+    border-radius: 50px;
+  }
+  &.is-circle {
+    border-radius: 50%;
+  }
+  @include button-hover(
+    $--color-primary,
+    rgba($--color-primary, .2),
+    $--color-primary
+  );
+  @include button-is-plain(
+    $--color-font--default,
+    #fff,
+    $--color-font--default,
+    $--color-primary,
+    #fff,
+    $--color-primary
+  );
+  &--text {
+    border: 0;
+    color: $--color-primary;
+  }
+  &--primary {
+    background-color: $--color-primary;
+    color: #fff;
+    border: 0;
+    @include button-hover(#fff, lighten($--color-primary, 20%), $--color-primary);
+    @include button-is-plain(
+      $--color-primary,
+      rgba($--color-primary, .2),
+      $--color-primary,
+      #fff,
+      $--color-primary,
+      $--color-primary
+    );
+  }
+  &--success {
+    background-color: $--color-success;
+    color: #fff;
+    border: 0;
+    @include button-hover(#fff, lighten($--color-success, 20%), $--color-success);
+    @include button-is-plain(
+      $--color-success,
+      rgba($--color-success, .2),
+      $--color-success,
+      #fff,
+      $--color-success,
+      $--color-success
+    );
+  }
+  &--warning {
+    background-color: $--color-warning;
+    color: #fff;
+    border: 0;
+    @include button-hover(#fff, lighten($--color-warning, 20%), $--color-warning);
+    @include button-is-plain(
+      $--color-warning,
+      rgba($--color-warning, .2),
+      $--color-warning,
+      #fff,
+      $--color-warning,
+      $--color-warning
+    );
+  }
+  &--danger {
+    background-color: $--color-danger;
+    color: #fff;
+    border: 0;
+    @include button-hover(#fff, lighten($--color-danger, 20%), $--color-danger);
+    @include button-is-plain(
+      $--color-danger,
+      rgba($--color-danger, .2),
+      $--color-danger,
+      #fff,
+      $--color-danger,
+      $--color-danger
+    );
+  }
+  &--info {
+    background-color: $--color-info;
+    color: #fff;
+    border: 0;
+    @include button-hover(#fff, lighten($--color-info, 20%), $--color-info);
+    @include button-is-plain(
+      $--color-info,
+      rgba($--color-info, .2),
+      $--color-info,
+      #fff,
+      $--color-info,
+      $--color-info
+    );
+  }
+  &+.fa-button {
+    margin-left: 10px;
+  }
+}
