@@ -24,14 +24,22 @@
   border: {
     width: 1px;
     style: solid;
-    color: $--color-font--default;
+    color: $--color-border--default;
   }
+  line-height: 1;
   border-radius: 4px;
   color: $--color-font--default;
   display: inline-block;
   box-sizing: border-box;
   padding: 12px 20px;
   font-size: $--font-size--normal;
+  transition: all ease-in .2s;
+  background-color: #fff;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  white-space: nowrap;
+  text-align: center;
   &.size--medium {
     padding: 10px 20px;
   }
@@ -54,6 +62,7 @@
   }
   &.is-circle {
     border-radius: 50%;
+    padding: 12px;
   }
   @include button-hover(
     $--color-primary,
@@ -63,7 +72,7 @@
   @include button-is-plain(
     $--color-font--default,
     #fff,
-    $--color-font--default,
+    $--color-border--default,
     $--color-primary,
     #fff,
     $--color-primary
@@ -71,12 +80,17 @@
   &--text {
     border: 0;
     color: $--color-primary;
+    @include button-hover(
+      lighten($--color-primary, 10%),
+      #fff,
+      #fff
+    );
   }
   &--primary {
     background-color: $--color-primary;
     color: #fff;
-    border: 0;
-    @include button-hover(#fff, lighten($--color-primary, 20%), $--color-primary);
+    border-color: $--color-primary;
+    @include button-hover(#fff, lighten($--color-primary, 10%), $--color-primary);
     @include button-is-plain(
       $--color-primary,
       rgba($--color-primary, .2),
@@ -89,8 +103,8 @@
   &--success {
     background-color: $--color-success;
     color: #fff;
-    border: 0;
-    @include button-hover(#fff, lighten($--color-success, 20%), $--color-success);
+    border-color: $--color-success;
+    @include button-hover(#fff, lighten($--color-success, 10%), $--color-success);
     @include button-is-plain(
       $--color-success,
       rgba($--color-success, .2),
@@ -103,8 +117,8 @@
   &--warning {
     background-color: $--color-warning;
     color: #fff;
-    border: 0;
-    @include button-hover(#fff, lighten($--color-warning, 20%), $--color-warning);
+    border-color: $--color-warning;
+    @include button-hover(#fff, lighten($--color-warning, 10%), $--color-warning);
     @include button-is-plain(
       $--color-warning,
       rgba($--color-warning, .2),
@@ -117,8 +131,8 @@
   &--danger {
     background-color: $--color-danger;
     color: #fff;
-    border: 0;
-    @include button-hover(#fff, lighten($--color-danger, 20%), $--color-danger);
+    border-color: $--color-danger;
+    @include button-hover(#fff, lighten($--color-danger, 10%), $--color-danger);
     @include button-is-plain(
       $--color-danger,
       rgba($--color-danger, .2),
@@ -131,8 +145,8 @@
   &--info {
     background-color: $--color-info;
     color: #fff;
-    border: 0;
-    @include button-hover(#fff, lighten($--color-info, 20%), $--color-info);
+    border-color: $--color-info;
+    @include button-hover(#fff, lighten($--color-info, 10%), $--color-info);
     @include button-is-plain(
       $--color-info,
       rgba($--color-info, .2),
@@ -144,5 +158,12 @@
   }
   &+.fa-button {
     margin-left: 10px;
+  }
+  .fa-button__icon {
+    line-height: 1;
+    &+.fa-button__inner {
+      margin-left: 5px;
+      vertical-align: baseline;
+    }
   }
 }

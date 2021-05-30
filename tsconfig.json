@@ -14,11 +14,7 @@
 		"sourceMap": true,
 		"baseUrl": ".",
 		"declaration": true,
-		"paths": {
-			"@/*": [
-				"packages/*"
-			]
-		},
+		"outDir": "lib",
 		"lib": [
 			"esnext",
 			"dom",
@@ -30,9 +26,10 @@
 		"packages/**/*.ts",
 		"packages/**/*.tsx",
 		"packages/**/*.vue",
-		"tests/**/*.ts",
-		"tests/**/*.tsx",
-		"packages/shim-vue.d.ts"
+		"examples/**/*.ts",
+		"examples/**/*.tsx",
+		"examples/**/*.vue", 
+		"types/index.d.ts"
 	],
 	"exclude": [
 		"node_modules"

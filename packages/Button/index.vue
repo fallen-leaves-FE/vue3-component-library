@@ -4,7 +4,10 @@
     :class="classNames"
     @click="handleClick"
   >
-    <span><slot></slot></span>
+    <i v-if="icon" class="fa-button__icon" :class="icon"></i>
+    <span class="fa-button__inner" v-if="slots.default">
+      <slot></slot>
+    </span>
   </button>
 </template>
 <script lang="ts">
@@ -14,11 +17,12 @@ type ButtonTypes = 'default' | 'text'| 'primary' | 'success' | 'warning' | 'info
 type ButtonSize = 'medium' | 'small' | 'mini' | undefined
 interface ButtonProps {
   type?: ButtonTypes
+  icon?: string
   disabled?: boolean
   round?: boolean
   plain?: boolean
   circle?: boolean
-  size?: ButtonSize 
+  size?: ButtonSize
 }
 
 export default defineComponent({
@@ -27,6 +31,11 @@ export default defineComponent({
     type: { // 按钮类型
       type: String as PropType<ButtonTypes>,
       default: 'default'
+    },
+    icon: String, // 图标
+    size: { // 尺寸
+      type: String as PropType<ButtonSize>,
+      default: 'medium'
     },
     disabled: { // 是否禁用
       type: Boolean,
@@ -45,7 +54,7 @@ export default defineComponent({
       default: false
     }
   },
-  setup(props: ButtonProps, context) {
+  setup(props: ButtonProps, { emit, slots }) {
     const classNames = reactive({
       'fa-button--text': props.type === 'text',
       'fa-button--primary': props.type === 'primary',
@@ -56,21 +65,20 @@ export default defineComponent({
       'is-disabled': props.disabled,
       'is-plain': props.plain,
       'is-circle': props.circle,
+      'is-round': props.round,
       [`size--${props.size}`]: !!props.size
     })
     const handleClick = (e: any) => {
       if (props.disabled) {
         return false
       }
-      context.emit('click', e)
+      emit('click', e)
     }
     return {
       classNames,
+      slots,
       handleClick
     }
   }
 })
 </script>
-<style lang="scss">
-@import '../style/scss/button';
-</style>
