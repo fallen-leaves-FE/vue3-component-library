@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import FaUI from '../lib/js/fa-ui.umd'
+import FaUI from '../lib/js/fa-ui.umd.js'
 import '../lib/style/scss/index.scss'
 import App from './App.vue'
 
