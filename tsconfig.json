@@ -21,10 +21,7 @@
 			"dom",
 			"dom.iterable",
 			"scripthost"
-		],
-		"paths": {
-			"@/*": ["packages/*"]
-		}
+		]
 	},
 	"include": [
 		"packages/**/*.ts",

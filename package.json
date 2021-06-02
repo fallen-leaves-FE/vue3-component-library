@@ -5,6 +5,7 @@
 	"module": "lib/js/fa-ui.esm.js",
 	"files": [
 		"lib",
+		"types",
 		"packages"
 	],
 	"types": "types/index.d.ts",

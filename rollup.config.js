@@ -82,7 +82,6 @@ const config = [
 			}),
 			copy({
 				targets: [
-					{ src: 'packages/style/scss/*.scss', dest: 'lib/style/scss' },
 					{ src: 'packages/style/fonts/*', dest: 'lib/style/fonts' }
 				]
 			})
