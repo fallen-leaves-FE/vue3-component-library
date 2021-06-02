@@ -1,6 +1,6 @@
 {
-	"name": "{{name}}",
-	"version": "{{version}}",
+	"name": "name",
+	"version": "1.0",
 	"main": "lib/js/fa-ui.umd.js",
 	"module": "lib/js/fa-ui.esm.js",
 	"files": [
@@ -10,13 +10,13 @@
 	],
 	"types": "types/index.d.ts",
 	"license": "MIT",
-	"author": "{{author}}",
-	"description": "{{description}}",
+	"author": "author",
+	"description": "description",
 	"scripts": {
 		"build": "npm run clean && npm run lint && cross-env NODE_ENV=production rollup -c rollup.config.js",
 		"dev": "npm run clean && npm run lint && cross-env NODE_ENV=development rollup -c rollup.config.js -w",
 		"clean": "rimraf ./lib",
-		"lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue"
+		"lint": "eslint"
 	},
 	"devDependencies": {
 		"@rollup/plugin-node-resolve": "^13.0.0",
@@ -33,6 +33,7 @@
 		"postcss-import": "^14.0.1",
 		"postcss-minify": "^1.1.0",
 		"postcss-preset-env": "^6.7.0",
+		"pre-commit": "^1.2.2",
 		"rimraf": "^3.0.2",
 		"rollup": "^2.47.0",
 		"rollup-plugin-commonjs": "^10.1.0",
@@ -50,6 +51,9 @@
 	"dependencies": {
 		"vue": "^3.0.11"
 	},
+	"pre-commit": [
+		"lint"
+	],
 	"browserslist": [
 		"last 2 version",
 		">1%",
