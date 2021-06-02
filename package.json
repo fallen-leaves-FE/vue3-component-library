@@ -12,9 +12,10 @@
 	"author": "{{author}}",
 	"description": "{{description}}",
 	"scripts": {
-		"build": "npm run clean && cross-env NODE_ENV=production rollup -c rollup.config.js",
-		"dev": "npm run clean && cross-env NODE_ENV=development rollup -c rollup.config.js -w",
-		"clean": "rimraf ./lib"
+		"build": "npm run clean && npm run lint && cross-env NODE_ENV=production rollup -c rollup.config.js",
+		"dev": "npm run clean && npm run lint && cross-env NODE_ENV=development rollup -c rollup.config.js -w",
+		"clean": "rimraf ./lib",
+		"lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue"
 	},
 	"devDependencies": {
 		"@rollup/plugin-node-resolve": "^13.0.0",
@@ -36,7 +37,6 @@
 		"rollup-plugin-commonjs": "^10.1.0",
 		"rollup-plugin-copy": "^3.4.0",
 		"rollup-plugin-css-only": "^3.1.0",
-		"rollup-plugin-dts": "^3.0.2",
 		"rollup-plugin-esbuild": "^4.2.3",
 		"rollup-plugin-livereload": "^2.0.0",
 		"rollup-plugin-postcss": "^4.0.0",

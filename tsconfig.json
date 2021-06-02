@@ -14,13 +14,17 @@
 		"sourceMap": true,
 		"baseUrl": ".",
 		"declaration": true,
+		"declarationDir": "types",
 		"outDir": "lib",
 		"lib": [
 			"esnext",
 			"dom",
 			"dom.iterable",
 			"scripthost"
-		]
+		],
+		"paths": {
+			"@/*": ["packages/*"]
+		}
 	},
 	"include": [
 		"packages/**/*.ts",
@@ -28,8 +32,8 @@
 		"packages/**/*.vue",
 		"examples/**/*.ts",
 		"examples/**/*.tsx",
-		"examples/**/*.vue", 
-		"types/index.d.ts"
+		"examples/**/*.vue",
+		"types/**/*.d.ts"
 	],
 	"exclude": [
 		"node_modules"
