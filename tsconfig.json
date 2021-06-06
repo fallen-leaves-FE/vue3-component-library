@@ -16,6 +16,7 @@
 		"declaration": true,
 		"declarationDir": "types",
 		"outDir": "lib",
+		"types": ["jest"],
 		"lib": [
 			"esnext",
 			"dom",
@@ -30,7 +31,9 @@
 		"examples/**/*.ts",
 		"examples/**/*.tsx",
 		"examples/**/*.vue",
-		"types/**/*.d.ts"
+		"types/**/*.d.ts",
+		"tests/**/*.ts",
+		"tests/**/*.tsx"
 	],
 	"exclude": [
 		"node_modules"

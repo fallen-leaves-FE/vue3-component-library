@@ -3,7 +3,7 @@
     <fa-button>
       default
     </fa-button>
-    <fa-button type="text">
+    <fa-button type="text111">
       text
     </fa-button>
     <fa-button type="success">
