@@ -15,7 +15,7 @@
 	"scripts": {
 		"build": "npm run clean && npm run lint && cross-env NODE_ENV=production rollup -c build/rollup.config.js",
 		"dev": "npm run clean && npm run lint && cross-env NODE_ENV=development rollup -c build/rollup.config.js -w",
-		"clean": "rimraf ./lib ./dist",
+		"clean": "rimraf ./lib ./dist ./coverage",
 		"lint": "eslint ./",
 		"lint:fix": "eslint --fix ./",
 		"test": "jest"
@@ -48,7 +48,6 @@
 		"rollup-plugin-livereload": "^2.0.0",
 		"rollup-plugin-postcss": "^4.0.0",
 		"rollup-plugin-replace": "^2.2.0",
-		"rollup-plugin-scss": "^2.6.1",
 		"rollup-plugin-serve": "^1.1.0",
 		"rollup-plugin-vue": "^6.0.0",
 		"ts-jest": "26.5.6",
