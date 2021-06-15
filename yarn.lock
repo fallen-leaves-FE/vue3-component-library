@@ -5988,8 +5988,8 @@ rollup-plugin-livereload@^2.0.0:
 
 rollup-plugin-postcss@^4.0.0:
   version "4.0.0"
-  resolved "https://registry.npmjs.org/rollup-plugin-postcss/-/rollup-plugin-postcss-4.0.0.tgz"
-  integrity sha512-OQzT+YspV01/6dxfyEw8lBO2px3hyL8Xn+k2QGctL7V/Yx2Z1QaMKdYVslP1mqv7RsKt6DROIlnbpmgJ3yxf6g==
+  resolved "https://artifactory.longhu.net/api/npm/dt-npm-public/rollup-plugin-postcss/-/rollup-plugin-postcss-4.0.0.tgz#2131fb6db0d5dce01a37235e4f6ad4523c681cea"
+  integrity sha1-ITH7bbDV3OAaNyNeT2rUUjxoHOo=
   dependencies:
     chalk "^4.1.0"
     concat-with-sourcemaps "^1.1.0"

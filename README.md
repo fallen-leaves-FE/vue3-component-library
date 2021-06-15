@@ -6,6 +6,12 @@
 -	esbuild打包编译
 -	jest + @vue/test-utils 组件测试
 -	eslint代码规范检查
+-	sass，postcss预处理
+
+## 使用Stylus/Less
+默认支持Sass预处理，如需使用Stylus/Less，安装对应的解析器
+-	Stylus: `yarn add -D stylus`
+- Less: `yarn add -D less`
 ## 开发指南
 请使用wecoder-cli初始化使用
 ```

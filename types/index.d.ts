@@ -4,4 +4,4 @@ declare module '*.vue' {
   export default component
 }
 
-declare module '../lib/js/*.js'
+declare module '../lib/*.js'

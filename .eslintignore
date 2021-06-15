@@ -2,4 +2,5 @@ lib
 dist
 node_modules
 tests
+examples/index.html
 coverage
