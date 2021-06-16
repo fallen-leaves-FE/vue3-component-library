@@ -1,8 +1,8 @@
 {
 	"name": "fa-ui",
 	"version": "1.0.0",
-	"main": "lib/fa-ui.umd.js",
-	"module": "lib/fa-ui.esm.js",
+	"main": "lib/{{name}}.umd.js",
+	"module": "lib/{{name}}.esm.js",
 	"files": [
 		"lib",
 		"types",
@@ -10,8 +10,8 @@
 	],
 	"types": "types/index.d.ts",
 	"license": "MIT",
-	"author": "author",
-	"description": "description",
+	"author": "{{author}}",
+	"description": "{{description}}",
 	"scripts": {
 		"build": "npm run clean && npm run lint && cross-env NODE_ENV=production rollup -c build/rollup.config.js",
 		"dev": "npm run clean && npm run lint && cross-env NODE_ENV=development rollup -c build/rollup.config.js -w",
@@ -55,14 +55,10 @@
 		"vue-jest": "^5.0.0-alpha.10"
 	},
 	"dependencies": {
+		"postcss": "^8.0.0",
 		"vue": "^3.0.11"
 	},
 	"pre-commit": [
 		"lint"
-	],
-	"browserslist": [
-		"last 2 version",
-		">1%",
-		"ios 7"
 	]
 }
