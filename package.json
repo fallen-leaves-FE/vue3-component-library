@@ -16,8 +16,8 @@
 		"build": "npm run clean && npm run lint && cross-env NODE_ENV=production rollup -c build/rollup.config.js",
 		"dev": "npm run clean && npm run lint && cross-env NODE_ENV=development rollup -c build/rollup.config.js -w",
 		"clean": "rimraf ./lib ./dist ./coverage",
-		"lint": "eslint --ignore-path .gitignore .",
-		"lint:fix": "eslint --fix --ignore-path .gitignore .",
+		"lint": "eslint --ignore-path .eslintignore .",
+		"lint:fix": "eslint --fix --ignore-path .eslintignore .",
 		"test": "jest"
 	},
 	"devDependencies": {
