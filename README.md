@@ -26,6 +26,7 @@ wecoder init <project-name>
 # 1.项目基本配置
 # 2.选择基于rollup的vue3.0组件库模板
 # 3.等待初始化完成
+# 4.修改examples/main.ts中引入文件的路径（将“[name]”替换为打包后的js名称）
 cd <project-name>
 ```
 
