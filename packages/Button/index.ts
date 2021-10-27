@@ -1,6 +1,6 @@
 import { App } from 'vue'
-import Button from './index.vue'
-import '../style/scss/button.scss'
+import Button from './src/index.vue'
+import '../assets/scss/button.scss'
 
 Button.install = (app: App) => {
 	app.component(Button.name, Button)

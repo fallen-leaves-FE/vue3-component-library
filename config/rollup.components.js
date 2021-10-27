@@ -2,7 +2,7 @@ import path from 'path'
 import postcss from 'rollup-plugin-postcss'
 import components from '../components.json'
 
-export default function (commonRollupPlugins, isProduct) {
+export default function (commonRollupPlugins) {
 	return {
 		input: components,
 		output: {
@@ -13,10 +13,7 @@ export default function (commonRollupPlugins, isProduct) {
 		},
 		plugins: [
 			...commonRollupPlugins,
-			postcss({
-				extract: false,
-				minimize: isProduct
-			})
+			postcss()
 		],
 		external: ['vue']
 	}

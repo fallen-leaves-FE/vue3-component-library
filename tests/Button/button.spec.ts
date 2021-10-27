@@ -1,4 +1,4 @@
-import Button from '@/Button/index.vue'
+import Button from '@/Button/src/index.vue'
 import { mount } from '@vue/test-utils'
 
 describe('packages/Button/index.vue', () => {

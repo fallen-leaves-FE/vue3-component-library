@@ -61,9 +61,9 @@ yarn build
 ```
 ...
 packages -------------- 组件库源码
- - Button ------------- 样例组件目录
-  - index.ts ---------- 样例组件注册入口
-  - index.vue --------- 样例组件源码
+ - Button ------------- 组件目录
+  - index.ts ---------- 组件注册入口
+  - src --------------- 组件源码
  - index.ts ----------- 组件库打包入口文件
 examples -------------- 开发预览页面源码
  - main.ts ------------ 预览页入口文件
@@ -78,6 +78,7 @@ types ----------------- ts注解文件目录
 jest.config.js -------- jest测试配置文件
 rollup.config.js ------ rollup配置文件
 tsconfig.json --------- ts编译配置文件
+components.json ------- 单组件映射表
 ...
 ```
 

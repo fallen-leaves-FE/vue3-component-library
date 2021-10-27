@@ -13,7 +13,8 @@ export default function (commonRollupPlugins, isProduct) {
 				name,
 				file: file('esm'),
 				format: 'es',
-				exports: 'auto'
+				exports: 'auto',
+				sourcemap: !isProduct
 			},
 			{
 				name,
@@ -22,6 +23,7 @@ export default function (commonRollupPlugins, isProduct) {
 				globals: {
 					'vue': 'Vue'
 				},
+				sourcemap: !isProduct,
 				exports: 'named'
 			}
 		],
@@ -33,7 +35,7 @@ export default function (commonRollupPlugins, isProduct) {
 			}),
 			copy({
 				targets: [{
-					src: path.resolve(__dirname, '../packages/fonts/*'),
+					src: path.resolve(__dirname, '../packages/assets/fonts/*'),
 					dest: path.resolve(__dirname, '../lib/fonts')
 				}]
 			})

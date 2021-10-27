@@ -16,7 +16,7 @@
 		"declaration": true,
 		"declarationDir": "types",
 		"outDir": "lib",
-		"types": ["jest"],
+		"types": ["jest", "html-minifier"],
 		"lib": [
 			"esnext",
 			"dom",

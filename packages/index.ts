@@ -1,6 +1,6 @@
 import { App } from 'vue'
 import Button from './Button'
-import './style/scss/index.scss'
+import './assets/scss/index.scss'
 
 const components = [
 	Button

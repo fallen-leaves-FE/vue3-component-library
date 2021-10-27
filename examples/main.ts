@@ -4,5 +4,6 @@ import '../lib/css/fa-ui.min.css'
 import App from './App.vue'
 
 const app = createApp(App)
+
 app.use(FaUI)
 app.mount('#app')
