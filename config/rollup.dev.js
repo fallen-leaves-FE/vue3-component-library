@@ -4,6 +4,10 @@ import copy from 'rollup-plugin-copy'
 import replace from 'rollup-plugin-replace'
 import html from 'rollup-plugin-html2'
 import postcss from 'rollup-plugin-postcss'
+import autoprefixer from 'autoprefixer'
+import postcssPresetEnv from 'postcss-preset-env'
+import postcssMinify from 'postcss-minify'
+import postcssImport from 'postcss-import'
 import browserSync from 'rollup-plugin-browsersync'
 
 export default function (commonRollupPlugins) {
@@ -22,7 +26,14 @@ export default function (commonRollupPlugins) {
 				'process.env.NODE_ENV': JSON.stringify('development'),
 				'process.env.VUE_ENV': JSON.stringify('browser')
 			}),
-			postcss(),
+			postcss({
+				plugins: [
+					autoprefixer(),
+					postcssPresetEnv(),
+					postcssMinify(),
+					postcssImport()
+				]
+			}),
 			copy({
 				targets: [{
 					src: path.resolve(__dirname, '../lib/fonts/*'),

@@ -76,6 +76,6 @@ export default function () {
 	}
 	return [ // 全量打包
 		bundleConfig(commonRollupPlugins, isProduct),
-		componentsConfig(commonRollupPlugins, isProduct)
+		...componentsConfig(commonRollupPlugins, isProduct)
 	]
 }

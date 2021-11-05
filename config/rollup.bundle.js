@@ -1,7 +1,12 @@
 import path from 'path'
-import postcss from 'rollup-plugin-postcss'
+import postcss from 'postcss'
+import scss from 'rollup-plugin-scss'
 import copy from 'rollup-plugin-copy'
 import { name } from '../package.json'
+import autoprefixer from 'autoprefixer'
+import postcssPresetEnv from 'postcss-preset-env'
+import postcssMinify from 'postcss-minify'
+import postcssImport from 'postcss-import'
 
 const file = (type = 'min') => path.resolve(__dirname, `../lib/${name}.${type}.js`)
 
@@ -28,11 +33,18 @@ export default function (commonRollupPlugins, isProduct) {
 			}
 		],
 		plugins: [
-			...commonRollupPlugins,
-			postcss({
-				extract: `css/${name}.min.css`,
-				minimize: isProduct
+			scss({
+				output: `lib/css/${name}.min.css`,
+				prefix: '@import "./variable";',
+				processor: () => postcss([
+					autoprefixer(),
+					postcssPresetEnv(),
+					postcssMinify(),
+					postcssImport()
+				]),
+				sass: require('node-sass')
 			}),
+			...commonRollupPlugins,
 			copy({
 				targets: [{
 					src: path.resolve(__dirname, '../packages/assets/fonts/*'),
