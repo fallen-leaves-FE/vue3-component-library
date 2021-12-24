@@ -10,8 +10,8 @@
 	],
 	"exports": {
     ".": {
-      "import": "./dist/{{name}}.esm.js",
-      "require": "./dist/{{name}}.umd.js"
+      "import": "./lib/{{name}}.esm.js",
+      "require": "./lib/{{name}}.umd.js"
     }
   },
 	"types": "types/index.d.ts",
