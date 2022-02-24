@@ -61,6 +61,7 @@ export default defineComponent({
 			default: false
 		}
 	},
+	emits: ['click'],
 	setup (props: ButtonProps, { emit, slots }) {
 		const classNames = reactive({
 			'fa-button--text': props.type === 'text',
