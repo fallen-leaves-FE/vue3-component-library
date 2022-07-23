@@ -31,7 +31,6 @@
 		"examples/**/*.ts",
 		"examples/**/*.tsx",
 		"examples/**/*.vue",
-		"types/**/*.d.ts",
 		"tests/**/*.ts",
 		"tests/**/*.tsx"
 	],

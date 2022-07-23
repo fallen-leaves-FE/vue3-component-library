@@ -9,11 +9,11 @@
 		"packages"
 	],
 	"exports": {
-    ".": {
-      "import": "./lib/{{name}}.esm.js",
-      "require": "./lib/{{name}}.umd.js"
-    }
-  },
+		".": {
+			"import": "./lib/{{name}}.esm.js",
+			"require": "./lib/{{name}}.umd.js"
+		}
+	},
 	"types": "types/index.d.ts",
 	"license": "MIT",
 	"author": "{{author}}",
@@ -29,6 +29,8 @@
 		"clean:components": "rimraf ./lib/components ",
 		"lint": "eslint --ignore-path .eslintignore .",
 		"lint:fix": "eslint --fix --ignore-path .eslintignore .",
+		"dts": "vue-tsc --declaration --emitDeclarationOnly",
+		"dts:check": "vue-tsc --noEmit",
 		"test": "npm run clean:test && jest"
 	},
 	"devDependencies": {
@@ -74,7 +76,8 @@
 		"ts-jest": "26.5.6",
 		"typescript": "^4.4.4",
 		"vue": "^3.2.20",
-		"vue-jest": "^5.0.0-alpha.10"
+		"vue-jest": "^5.0.0-alpha.10",
+		"vue-tsc": "^0.39.0"
 	},
 	"pre-commit": [
 		"lint"
