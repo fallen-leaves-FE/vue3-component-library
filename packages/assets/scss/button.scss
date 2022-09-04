@@ -1,4 +1,4 @@
-@import './icon';
+@import './variable';
 @mixin button-hover($--font-color, $--background-color, $--border-color) {
   &:hover {
     color: $--font-color;

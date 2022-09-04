@@ -1,40 +1,44 @@
 {
-	"compilerOptions": {
-		"target": "esnext",
-		"module": "esnext",
-		"strict": true,
-		"jsx": "preserve",
-		"importHelpers": true,
-		"moduleResolution": "node",
-		"experimentalDecorators": true,
-		"allowJs": true,
-		"skipLibCheck": true,
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
-		"sourceMap": true,
-		"baseUrl": ".",
-		"declaration": true,
-		"declarationDir": "types",
-		"outDir": "lib",
-		"types": ["jest", "html-minifier"],
-		"lib": [
-			"esnext",
-			"dom",
-			"dom.iterable",
-			"scripthost"
-		]
-	},
-	"include": [
-		"packages/**/*.ts",
-		"packages/**/*.tsx",
-		"packages/**/*.vue",
-		"examples/**/*.ts",
-		"examples/**/*.tsx",
-		"examples/**/*.vue",
-		"tests/**/*.ts",
-		"tests/**/*.tsx"
-	],
-	"exclude": [
-		"node_modules"
-	]
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationDir": "types",
+    "outDir": "lib",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    "paths": {
+      "@packages/*": ["packages/*"]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "packages/**/*.ts",
+    "packages/**/*.tsx",
+    "packages/**/*.vue",
+    "examples/**/*.ts",
+    "examples/**/*.tsx",
+    "examples/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
