@@ -1,23 +1,25 @@
 import { App } from 'vue'
-import Button from './Button'
+import Button from './components/Button'
+import Icon from './components/Icon'
 import './assets/scss/index.scss'
 
 const components = [
-	Button
+  Button,
+  Icon
 ]
 // 全局注册
 const install = (app: App) => {
-	components.forEach(component => {
-		app.component(component.name, component)
-	})
+  components.forEach(component => {
+    app.component(component.name, component)
+  })
 }
-
 // 局部注册
 export {
-	Button,
-	install
+  Button,
+  Icon,
+  install
 }
 
 export default {
-	install
+  install
 }

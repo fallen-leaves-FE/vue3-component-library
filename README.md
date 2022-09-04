@@ -1,17 +1,12 @@
-# Rollup + Typescript + Vue3.0组件库模板
+# Esbuild + Typescript + Vue3.0组件库模板
 
 ## 功能介绍
--	rollup模块化打包
 -	typescript
 -	esbuild打包编译
--	jest + @vue/test-utils 组件测试
 -	eslint代码规范检查
 -	sass，postcss预处理
+- browserSync本地开发服务
 
-## 使用Stylus/Less
-默认支持Sass预处理，如需使用Stylus/Less，安装对应的解析器
--	Stylus: `yarn add -D stylus`
-- Less: `yarn add -D less`
 ## 开发指南
 请使用wecoder-cli初始化使用
 ```
@@ -24,9 +19,9 @@ npm install -g wecoder-cli
 wecoder init <project-name>
 
 # 1.项目基本配置
-# 2.选择基于rollup的vue3.0组件库模板
+# 2.选择基于esbuild的vue3.0组件库模板
 # 3.等待初始化完成
-# 4.修改examples/main.ts中引入文件的路径（将“[name]”替换为打包后的js名称）
+# 4.修改esbuild.config.js中libraryName变量为包的名
 cd <project-name>
 ```
 
@@ -44,12 +39,6 @@ npm run dev
 yarn dev
 ```
 
-单元测试
-```
-npm run test
-# or
-yarn test
-```
 
 生产打包
 ```
@@ -61,25 +50,23 @@ yarn build
 ## 目录结构
 ```
 ...
-packages -------------- 组件库源码
- - Button ------------- 组件目录
-  - index.ts ---------- 组件注册入口
-  - src --------------- 组件源码
+packages --------------- 组件库源码
+ - components ---------- 组件目录
+  - Button ------------- 组件目录
+   - index.ts ---------- 组件注册入口
+   - src --------------- 组件源码
  - index.ts ----------- 组件库打包入口文件
 examples -------------- 开发预览页面源码
  - main.ts ------------ 预览页入口文件
  - App.vue ------------ 预览页入口组件
  - index.html --------- 预览页htlm模板
-tests ----------------- 单元测试目录
- - **/*.spec.ts ------- 单元测试文件
 types ----------------- ts注解文件目录
 .editorconfig --------- 编辑器配置文件
 .eslintignore --------- eslint检查忽略目录
 .eslintrc ------------- eslint检查配置文件
-jest.config.js -------- jest测试配置文件
-rollup.config.js ------ rollup配置文件
+esbuild.config.js ------ esbuild配置文件
 tsconfig.json --------- ts编译配置文件
-components.json ------- 单组件映射表
+components.js --------- 单组件映射表
 ...
 ```
 

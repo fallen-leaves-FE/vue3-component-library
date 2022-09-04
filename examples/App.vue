@@ -3,7 +3,7 @@
     <fa-button>
       default
     </fa-button>
-    <fa-button type="text111">
+    <fa-button type="text">
       text
     </fa-button>
     <fa-button type="success">
@@ -58,79 +58,108 @@
 
   <div class="btns">
     <fa-button round>
+      <template #icon>
+        <fa-icon name="fa-icon-compass" />
+      </template>
       default
     </fa-button>
     <fa-button
       type="text"
       round
     >
+      <template #icon>
+        <fa-icon name="fa-icon-compass" />
+      </template>
       text
     </fa-button>
     <fa-button
       type="success"
       round
     >
+      <template #icon>
+        <fa-icon name="fa-icon-compass" />
+      </template>
       success
     </fa-button>
     <fa-button
       type="danger"
       round
     >
+      <template #icon>
+        <fa-icon name="fa-icon-compass" />
+      </template>
       danger
     </fa-button>
     <fa-button
       type="info"
       round
     >
+      <template #icon>
+        <fa-icon name="fa-icon-compass" />
+      </template>
       info
     </fa-button>
     <fa-button
       type="primary"
       round
     >
+      <template #icon>
+        <fa-icon name="fa-icon-compass" />
+      </template>
       primary
     </fa-button>
   </div>
 
   <div class="btns">
+    <fa-button circle>
+      <template #icon>
+        <fa-icon name="fa-icon-compass" />
+      </template>
+    </fa-button>
     <fa-button
-      icon="fa-icon-plus-app"
-      circle
-    />
-    <fa-button
-      icon="fa-icon-delete-right"
       type="text"
       circle
-    />
+    >
+      <template #icon>
+        <fa-icon name="fa-icon-compass" />
+      </template>
+    </fa-button>
     <fa-button
-      icon="fa-icon-delete-left"
       type="success"
       circle
-    />
+    >
+      <template #icon>
+        <fa-icon name="fa-icon-compass" />
+      </template>
+    </fa-button>
     <fa-button
       type="danger"
-      icon="fa-icon-compass"
       circle
-    />
+    >
+      <template #icon>
+        <fa-icon name="fa-icon-compass" />
+      </template>
+    </fa-button>
     <fa-button
-      icon="fa-icon-compass"
       type="info"
       circle
-    />
+    >
+      <template #icon>
+        <fa-icon name="fa-icon-compass" />
+      </template>
+    </fa-button>
     <fa-button
-      icon="fa-icon-compass"
       type="primary"
       circle
-    />
+    >
+      <template #icon>
+        <fa-icon name="fa-icon-compass" />
+      </template>
+    </fa-button>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
-	setup () {
+<script lang="ts" setup>
 
-	}
-})
 </script>
 <style>
 	.btns {

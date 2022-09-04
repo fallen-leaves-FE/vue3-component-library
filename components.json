@@ -1,6 +1,0 @@
-{
-	"componentsMaps": {
-		"button": "./packages/Button/index.ts"
-	},
-	"webComponents": []
-}
