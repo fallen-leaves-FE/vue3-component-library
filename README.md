@@ -34,9 +34,9 @@ yarn
 
 本地开发
 ```
-npm run dev
+npm run serve
 # or
-yarn dev
+yarn serve
 ```
 
 
