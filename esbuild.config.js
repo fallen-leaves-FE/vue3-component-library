@@ -7,37 +7,13 @@ import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 import postcssPresetEnv from 'postcss-preset-env'
 import postcssImport from 'postcss-import'
-import browserSync from 'browser-sync'
+import esbuildPluginBowserSync from 'esbuild-plugin-browser-sync'
 import components from './components.js'
 
 // 判断当前环境
 const isServe = process.argv.includes('serve')
 // 包名
 const libraryName = 'fa-ui.js'
-
-// 封装esbuild本地服务插件
-function servePlugin (serveOptions = {}) {
-  // 创建服务实例
-  const bs = browserSync.create('dev-server')
-
-  return {
-    name: 'devServer',
-    setup (build) {
-      build.onEnd(() => {
-        // 避免重复启动服务
-        if (!bs.active) {
-          // 初始化服务
-          bs.init({
-            port: 3000,
-            watch: true,
-            open: true,
-            ...serveOptions
-          })
-        }
-      })
-    }
-  }
-}
 
 // 打包组件库
 async function buildLibrary () {
@@ -136,7 +112,7 @@ function buildExamples () {
       }),
       vue(),
       progress(),
-      servePlugin({
+      esbuildPluginBowserSync({
         server: 'examples'
       })
     ]

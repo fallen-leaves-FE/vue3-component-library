@@ -1,6 +1,6 @@
 {
   "name": "{{name}}",
-  "version": "1.0.0",
+  "version": "{{version}}",
   "main": "lib/{{name}}.js",
   "module": "lib/{{name}}.js",
   "files": [
@@ -23,13 +23,12 @@
     "dts:check": "vue-tsc --noEmit"
   },
   "devDependencies": {
-    "@types/html-minifier": "^4.0.2",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "@vue/compiler-sfc": "^3.2.38",
     "autoprefixer": "^10.4.8",
-    "browser-sync": "^2.27.10",
     "esbuild": "^0.15.6",
+    "esbuild-plugin-browser-sync": "^0.1.1",
     "esbuild-plugin-filesize": "^0.3.0",
     "esbuild-plugin-progress": "^1.0.1",
     "esbuild-plugin-vue": "^0.2.4",
